@@ -1,16 +1,16 @@
 import styles from "@/styles/Home.module.css";
 
-import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import { ChangeEvent, FormEvent, useState } from "react";
 import { v4 } from "uuid";
 
 import { setPlayer } from "../helpers/storage";
 
-
 export default function Home() {
   const [state, setState] = useState("");
+  const router = useRouter();
   const id = v4();
 
   const handleChange = ({
@@ -25,6 +25,7 @@ export default function Home() {
       id,
       name: state,
     });
+    router.push("/game");
   };
 
   return (
