@@ -1,3 +1,5 @@
+import styles from "@/styles/Home.module.css";
+
 import Head from "next/head";
 import Image from "next/image";
 
@@ -6,7 +8,6 @@ import { v4 } from "uuid";
 
 import { setPlayer } from "../helpers/storage";
 
-import styles from "@/styles/Home.module.css";
 
 export default function Home() {
   const [state, setState] = useState("");
@@ -27,20 +28,28 @@ export default function Home() {
   };
 
   return (
-    <section>
+    <section className={styles.container}>
       <div>
-        <h1>Quem é esse</h1>
-        <Image src="/images/logo.svg" width="500" height="200" alt="logo" />
+        <h1 className={styles.title}>Quem é esse</h1>
+        <Image
+          src="/images/logo.svg"
+          width="500"
+          height="200"
+          alt="logo"
+          className={styles.logo}
+        />
       </div>
       <div>
-        <form onSubmit={handleClick}>
+        <form onSubmit={handleClick} className={styles.form}>
           <input
             type="text"
             name="player"
             placeholder="Digite seu nome ou apelido"
             onChange={handleChange}
           />
-          <button type="submit">Começar</button>
+          <button type="submit" disabled={state.length > 3 ? false : true}>
+            Começar
+          </button>
         </form>
       </div>
     </section>
