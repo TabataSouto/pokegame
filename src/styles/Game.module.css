@@ -1,0 +1,7 @@
+.container {
+  background: aquamarine;
+}
+
+.image {
+  filter: invert(50%) brightness(0%)
+}

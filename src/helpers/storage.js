@@ -1,6 +1,6 @@
-export const setPlayer = (key, value) =>
+export const setStorage = (key, value) =>
   localStorage.setItem(key, JSON.stringify(value));
 
-export const getPlayer = (key) => JSON.parse(localStorage.getItem(key));
+export const getSorage = (key) => JSON.parse(localStorage.getItem(key));
 
-export const removePlayer = (key) => localStorage.removeItem(key);
+export const removeStorage = (key) => localStorage.removeItem(key);

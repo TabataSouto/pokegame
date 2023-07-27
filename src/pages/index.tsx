@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { v4 } from "uuid";
 
-import { setPlayer } from "../helpers/storage";
+import { setStorage } from "../helpers/storage";
 
 export default function Home() {
   const [state, setState] = useState("");
@@ -21,7 +21,7 @@ export default function Home() {
 
   const handleClick = (event: FormEvent) => {
     event.preventDefault();
-    setPlayer("user", {
+    setStorage("user", {
       id,
       name: state,
     });
